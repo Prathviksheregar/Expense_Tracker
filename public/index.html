@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Expense Tracker</h1>
+
+        <!-- Total Expenses Display -->
+        <div class="total-card">
+            <span>Total Expenses</span>
+            <span id="totalAmount">?0.00</span>
+        </div>
+
+        <section class="dashboard">
+            <div class="summary-card"><span>Monthly total</span><strong id="monthlyTotal">Rs. 0.00</strong></div>
+            <div class="summary-card"><span>Transactions</span><strong id="monthlyCount">0</strong></div>
+            <div class="summary-card budget-card"><span>Monthly budget</span><strong id="budgetStatus">Not set</strong></div>
+        </section>
+        <div id="categorySummary" class="category-summary"></div>
+        <div class="month-controls">
+            <label for="summaryMonth">Month</label>
+            <input type="month" id="summaryMonth">
+            <input type="number" id="budgetAmount" min="0.01" step="0.01" placeholder="Set monthly budget">
+            <button type="button" id="saveBudget">Save Budget</button>
+        </div>
+
+        <!-- Add Expense Form -->
+        <form id="expenseForm">
+            <h2>Add Expense</h2>
+
+            <input type="text" id="title" placeholder="Expense title" required>
+            <input type="number" id="amount" placeholder="Amount" step="0.01" min="0.01" required>
+
+            <select id="category" required>
+                <option value="">Select Category</option>
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Bills">Bills</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <input type="date" id="expense_date" required>
+            <button type="submit">Add Expense</button>
+        </form>
+
+        <!-- Search and Filter Controls -->
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Search expenses...">
+
+            <select id="filterCategory">
+                <option value="">All Categories</option>
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Bills">Bills</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <!-- Expenses Table -->
+        <table id="expensesTable">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Amount</th>
+                    <th>Category</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="expensesTableBody">
+                <!-- Rows will be added here dynamically by JavaScript -->
+            </tbody>
+        </table>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

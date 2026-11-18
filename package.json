@@ -1,0 +1,19 @@
+{
+  "name": "expense-tracker",
+  "version": "1.0.0",
+  "description": "A full-stack expense tracker with category filtering, monthly summaries, and budget management.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --check server.js && node --check db.js && node --check controllers/expenseController.js && node --check models/expenseModel.js && node --check routes/expenseRoutes.js && node --check public/script.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mysql2": "^3.23.2"
+  }
+}
